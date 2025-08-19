@@ -19,9 +19,9 @@ function LoginComponent() {
   } = useForm({
     resolver: yupResolver(loginSchema),
   });
-  const [loginUser] = useLoginMutation(); // we use [] inside loginuser because useLoginMutation returns array
+  const [userLogin] = useLoginMutation(); // we use [] inside userLogin because useLoginMutation returns array
   const LoginForm = (data) => {
-    loginUser(data)
+    userLogin(data)
       .unwrap()
       .then((response) => {
         localStorage.setItem("token", response.token);
