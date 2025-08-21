@@ -10,9 +10,18 @@ export const authApiSlice = createApi({
         body: data,
       }),
     }),
+    getAuthUser: build.query({
+      query: () => ({
+        url: "/auth-user",
+        method: "GET",
+        headers: {
+          Authorization: `bearer ${localStorage.getItem("token")}`,
+        },
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation } = authApiSlice;
+export const { useLoginMutation, useGetAuthUserQuery } = authApiSlice;
 
 //we do mutation for create update delete, and for read only we do build.query then query

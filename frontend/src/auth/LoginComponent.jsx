@@ -29,7 +29,6 @@ function LoginComponent() {
       })
       .catch((error) => {
         setError("email", {
-          //error if password
           type: "manual",
           message: error.data.message || "login failed",
         });

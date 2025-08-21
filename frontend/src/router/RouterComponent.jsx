@@ -4,6 +4,7 @@ import HomeComponents from "../components/pages/HomeComponents";
 import AdminDashboard from "../components/admin/AdminDashboard";
 import AdminMiddleware from "../middleware/AdminMiddleware";
 import LoginComponent from "../auth/LoginComponent";
+import UserComponents from "../components/admin/UserComponents";
 function RouterComponent() {
   return (
     <div>
@@ -11,6 +12,7 @@ function RouterComponent() {
         <Route path="/" element={<HomeComponents />} />
         <Route path="/admin" element={<AdminMiddleware />}>
           <Route path="/admin/" element={<AdminDashboard />} />
+          <Route path="users" element={<UserComponents />} />
         </Route>
         <Route path="/login" element={<LoginComponent />} />
       </Routes>

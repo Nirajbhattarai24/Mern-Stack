@@ -6,7 +6,7 @@ const Ainstance = new AuthController();
 
 authRouter.post("/login", Ainstance.login);
 authRouter.post("/register", Ainstance.register);
-// authRouter.post("/", Ainstance.store);
+authRouter.get("/auth-user", Ainstance.authUser);
 // authRouter.get("/:id", Ainstance.show);
 // authRouter.put("/:id", Ainstance.update);
 // authRouter.delete("/:id", Ainstance.destroy);
